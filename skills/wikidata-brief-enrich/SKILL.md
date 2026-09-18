@@ -1,6 +1,6 @@
 ---
 name: wikidata-brief-enrich
-description: Use when the user pastes a briefing, news article, intelligence brief, or any free-text document and wants entities extracted and the text enriched with Wikidata triples (SPARQL against the local QLever Wikidata Truthy endpoint at http://localhost:7001/sparql). Triggers: "extract entities", "retrieve triples", "wikidata", "enrich this brief/report/article", "entity resolution". Do the extraction in a subagent to keep the session context clean, then emit the enhanced document.
+description: 'Use when the user pastes a briefing, news article, intelligence brief, or any free-text document and wants entities extracted and the text enriched with Wikidata triples (SPARQL against the local QLever Wikidata Truthy endpoint at http://localhost:7001/sparql). Triggers: "extract entities", "retrieve triples", "wikidata", "enrich this brief/report/article", "entity resolution". Do the extraction in a subagent to keep the session context clean, then emit the enhanced document.'
 ---
 
 # Wikidata Brief Enrichment
