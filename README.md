@@ -13,7 +13,7 @@ Parses a briefing or intelligence document, resolves named entities to Wikidata 
 
 ## How it fits with MacronX
 
-This skill pairs with the [News Analysis workflow](https://github.com/macron1-automations/macronx#news-analysis) in [macronx](https://github.com/macron1-automations/macronx).
+This skill pairs with the [News Analysis workflow](https://github.com/macron1-automations/macronx#news-analysis) in [MacronX](https://github.com/macron1-automations/macronx).
 
 After the pipeline generates an EIB, an analyst can use a coding agent (OpenCode, Cursor, Claude Code, etc.) with this skill to add Wikidata grounding to the brief — turning raw intelligence into a referenceable artifact with verified entity links.
 
