@@ -1,10 +1,10 @@
 # Wikidata Brief Enrichment
 
-Agent skill for enriching Executive Intelligence Briefs (EIBs) with Wikidata references. Designed as a companion to the [MacronX](https://github.com/macron1-automations/macronx) News Analysis workflow.
+Agent skill for enriching Executive Intelligence Briefs (EIBs) with Wikidata references. Designed as a companion to the [MacronX](https://github.com/macron1-automations/macronx) News Analysis workflow and the self-hosted [local-wikidata](https://github.com/macron1-automations/local-wikidata) Wikidata instance.
 
 ## What it does
 
-Parses a briefing or intelligence document, resolves named entities to Wikidata QIDs via a local QLever endpoint, and produces an enhanced document with:
+Parses a briefing or intelligence document, resolves named entities to Wikidata QIDs via a self-hosted [local-wikidata](https://github.com/macron1-automations/local-wikidata) QLever endpoint, and produces an enhanced document with:
 
 - **Inline QID tags** on first entity mention (e.g. `Russia \`Q159\``)
 - **Wikidata grounding** lines under each claim tying entities to verified triples
@@ -13,7 +13,7 @@ Parses a briefing or intelligence document, resolves named entities to Wikidata 
 
 ## How it fits with MacronX
 
-This skill pairs with the [News Analysis workflow](https://github.com/macron1-automations/macronx#news-analysis) in [macronx](https://github.com/macron1-automations/macronx).
+This skill pairs with the [News Analysis workflow](https://github.com/macron1-automations/macronx#news-analysis) in [MacronX](https://github.com/macron1-automations/macronx).
 
 After the pipeline generates an EIB, an analyst can use a coding agent (OpenCode, Cursor, Claude Code, etc.) with this skill to add Wikidata grounding to the brief — turning raw intelligence into a referenceable artifact with verified entity links.
 
@@ -21,8 +21,8 @@ The skill is agent-agnostic and works with any coding agent that supports the [A
 
 ## Prerequisites
 
-- **QLever Wikidata endpoint** running on `localhost:7001`
-  - English-only, ~2.9B best-rank triples, no qualifiers/references
+- **Self-hosted Wikidata instance** — the [local-wikidata](https://github.com/macron1-automations/local-wikidata) repo covers setup end-to-end: Docker + QLever, English-only ~2.9B best-rank Truthy triples, no qualifiers/references
+  - The endpoint runs on `localhost:7001` and serves queries at `http://localhost:7001/sparql`
   - The skill's technical notes include endpoint health checks and query patterns
 - A coding agent with [Agent Skills](https://agentskills.io) support (OpenCode, Claude Code, Cursor, Codex, Gemini CLI, etc.)
 
@@ -102,7 +102,7 @@ The CLI supports 75+ agents. Run `npx skills list -a <agent>` after install to v
 1. Open a coding agent (e.g. OpenCode) with this skill installed
 2. Paste or reference a briefing / intelligence document
 3. Trigger the skill with: *"extract entities, enrich with Wikidata"*
-4. The agent resolves entities via the local QLever endpoint and returns an enhanced document with QID tags and Wikidata grounding
+4. The agent resolves entities via the self-hosted [local-wikidata](https://github.com/macron1-automations/local-wikidata) QLever endpoint and returns an enhanced document with QID tags and Wikidata grounding
 
 ## License
 
